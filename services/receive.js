@@ -93,6 +93,8 @@ module.exports = class Receive {
       message.includes("start over")
     ) {
       response = Response.genNuxMessage(this.user);
+    } else if (message.includes("abrete sesamo")) {
+      response = Response.genText("ESTA ES UNA RESPUESTA AUTOMÁTICA");
     } else if (Number(message)) {
       response = Order.handlePayload("ORDER_NUMBER");
     } else if (message.includes("#")) {
