@@ -28,20 +28,20 @@ module.exports = class Care {
     switch (payload) {
       case "CARE_HELP":
         response = Response.genQuickReply(
-          i18n.__("care.prompt", {
+          i18n.__("care.prompt_buy", {
             userFirstName: this.user.firstName
           }),
           [
             {
-              title: i18n.__("care.order"),
+              title: i18n.__("care.onsite"),
               payload: "CARE_ORDER"
             },
             {
-              title: i18n.__("care.billing"),
+              title: i18n.__("care.online"),
               payload: "CARE_BILLING"
             },
             {
-              title: i18n.__("care.other"),
+              title: i18n.__("care.other_buy"),
               payload: "CARE_OTHER"
             }
           ]
@@ -60,7 +60,7 @@ module.exports = class Care {
             config.personaOrder.id
           ),
           Response.genTextWithPersona(
-            i18n.__("care.end"),
+            i18n.__("care.end_demo"),
             config.personaOrder.id
           ),
           Survey.genAgentRating(config.personaOrder.name)
@@ -92,16 +92,16 @@ module.exports = class Care {
 
         response = [
           Response.genTextWithPersona(
-            i18n.__("care.style", {
+            i18n.__("care.style_agent", {
               userFirstName: this.user.firstName,
               agentFirstName: config.personaSales.name
             }),
             config.personaSales.id
           ),
-          Response.genTextWithPersona(
-            i18n.__("care.end"),
-            config.personaSales.id
-          ),
+          // Response.genTextWithPersona(
+          //   i18n.__("care.end_demo"),
+          //   config.personaSales.id
+          // ),
           Survey.genAgentRating(config.personaSales.name)
         ];
         break;

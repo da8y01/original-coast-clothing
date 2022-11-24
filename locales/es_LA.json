@@ -1,77 +1,100 @@
 {
-  "profile": {
-    "greeting": "¡Te damos la bienvenida a Original Coast Clothing, {{user_first_name}}! Haz clic para empezar a disfrutar de nuestra experiencia de mensajes automáticos de muestra. Si quieres crear una experiencia similar, visita https://fb.me/get-sample-oc"
-  },
-  "menu": {
-    "order": "Actualizaciones del pedido",
-    "help": "Hablar con un agente",
-    "suggestion": "Sugerencias de ropa",
-    "shop": "Comprar",
-    "start_over": "Volver a empezar"
-  },
-  "get_started": {
-    "welcome": "¡Hola, {{userFirstName}}! Te damos la bienvenida a Original Coast Clothing, donde encontrarás estilos para toda ocasión.",
-    "guidance": "Puedes usar el menú a continuación para navegar por las funciones en cualquier momento.",
-    "help": "¿Cómo podemos ayudarte hoy?"
-  },
-  "leadgen": {
-    "promo": "Hola, {{userFirstName}}. Ahora encontrar ropa genial es más fácil y conveniente.",
-    "title": "Cupón de 50% de descuento",
-    "subtitle": "Aquí está tu cupón",
-    "apply": "Aplicar descuento",
-    "coupon": "Se agregó tu cupón a esta conversación; ahora puedes echarle un vistazo a la colección de verano con descuento"
-  },
-  "wholesale_leadgen": {
-    "intro": "Hola, {{userFirstName}}. Me llamo {{agentFirstName}}. Veo que desea unirse a nuestro programa de revendedores"
-  },
-  "curation": {
-    "prompt": "¿Estás buscando ropa para ti u otra persona?",
-    "occasion": "¡Genial! Empecemos. Primero, ¿buscas ropa para alguna ocasión en especial?",
-    "price": "¿Cuánto quieres gastar?",
-    "me": "¡Para mí!",
-    "someone": "Para otra persona",
-    "work": "Trabajo",
-    "dinner": "Cena",
-    "party": "Fiesta",
-    "sales": "Hablar con el equipo de ventas",
-    "shop": "Comprar este look",
-    "title": "Colección verano 2022",
-    "subtitle": "Ropa destacada",
-    "show": "Otro look"
-  },
-  "order": {
-    "prompt": "Estaremos encantados de ayudarte. Selecciona una de las siguientes opciones",
-    "search": "Buscar por número del pedido",
-    "account": "Vincular mi cuenta",
-    "dialog": "Diálogo de vinculación de cuentas",
-    "searching": "Buscando tu último pedido...",
-    "number": "Por supuesto, escribe el número del pedido",
-    "status": "Tu pedido está en camino, espera recibirlo en tres días."
-  },
-  "care": {
-    "prompt": "Para conectarte con el equipo correcto, dime de qué se trata.",
-    "order": "Consultas sobre pedidos",
-    "billing": "Problemas de facturación",
-    "other": "Otro tema",
-    "appointment": "Gracias por querer concertar una cita.",
-    "issue": "Hola, {{userFirstName}}. Me llamo {{agentFirstName}} y estoy aquí para ayudarte con cualquier pregunta que tengas sobre {{topic}}.",
-    "default": "Hola, {{userFirstName}}. Me llamo {{agentFirstName}} y estoy aquí para ofrecerte asistencia. ¿Cómo te puedo ayudar?",
-    "style": "Hola, {{userFirstName}}. Me llamo {{agentFirstName}} y estoy aquí para responder cualquier pregunta que puedas tener sobre nuestros estilos de verano.",
-    "end": "Aquí termina la demo. Aprovecha la eficacia de la plataforma de Messenger para tu negocio. Visita https://fb.me/get-sample-oc para aprender a crear una experiencia similar",
-    "help": "Ayuda"
-  },
-  "survey": {
-    "prompt": "Hola, quiero conocer tu opinión sobre tu experiencia reciente con {{agentFirstName}}",
-    "positive": "Gracias por tu opinión",
-    "neutral": "Gracias por tu opinión; si crees que hay algo que deberíamos mejorar, envíanos un comentario con el hashtag #sugerencia",
-    "negative": "Gracias por avisarnos. Lamentamos lo sucedido, dinos si hay algo que podamos hacer para mejorar la situación",
-    "suggestion": "Recibimos tu sugerencia y el equipo la revisará pronto. Si necesitas recibir una respuesta sobre esto ahora, envía un comentario con la palabra \"ayuda\""
-  },
-  "chat_plugin": {
-    "prompt": "Gracias por visitar nuestra tienda, asegúrese de ver todos los excelentes estilos que tenemos en la sección de verano."
-  },
-  "fallback": {
-    "any": "Lo siento, pero no reconozco \"{{message}}\".",
-    "attachment": "Gracias por enviar este archivo adjunto; ahora podemos comunicarte con un agente para que lo revise o puedes volver a empezar"
-  }
+	"profile": {
+		"greeting": "¡Te damos la bienvenida a Original Coast Clothing, {{user_first_name}}! Haz clic para empezar a disfrutar de nuestra experiencia de mensajes automáticos de muestra. Si quieres crear una experiencia similar, visita https://fb.me/get-sample-oc"
+	},
+	"menu": {
+		"order": "Actualizaciones del pedido",
+		"help": "Hablar con un agente",
+		"suggestion": "Sugerencias de ropa",
+		"shop": "Comprar",
+		"start_over": "Volver a empezar",
+		"watch_item": "Ver artículos",
+		"buy_item": "Adquirir artículos",
+		"go_catalog": "Ir a catálogo"
+	},
+	"get_started": {
+		"welcome": "¡Hola, {{userFirstName}}! Te damos la bienvenida a Sellers and Buyers v1.0, tienda de indumentaria, ropa y electrónicos.",
+		"guidance": "Puedes usar el menú a continuación para navegar por las principales funciones.",
+		"help": "¿Cómo podemos ayudarte hoy?"
+	},
+	"leadgen": {
+		"promo": "Hola, {{userFirstName}}. Ahora encontrar ropa genial es más fácil y conveniente.",
+		"title": "Cupón de 50% de descuento",
+		"subtitle": "Aquí está tu cupón",
+		"apply": "Aplicar descuento",
+		"coupon": "Se agregó tu cupón a esta conversación; ahora puedes echarle un vistazo a la colección de verano con descuento"
+	},
+	"wholesale_leadgen": {
+		"intro": "Hola, {{userFirstName}}. Me llamo {{agentFirstName}}. Veo que desea unirse a nuestro programa de revendedores"
+	},
+	"curation": {
+		"prompt": "¿Estás buscando ropa para ti u otra persona?",
+		"prompt_items": "¿Qué tipo de artículos buscas?",
+		"occasion": "¡Genial! Empecemos. Primero, ¿buscas ropa para alguna ocasión en especial?",
+		"occasion_outdoor": "¡Genial! Los siguientes son algunos de los artículos y/o opciones disponibles:",
+		"price": "¿Cuánto quieres gastar?",
+		"me": "¡Para mí!",
+		"someone": "Para otra persona",
+		"outdoor_wear": "Indumentaria & ropa",
+		"electronics": "Electrónicos",
+		"work": "Trabajo",
+		"dinner": "Cena",
+		"party": "Fiesta",
+		"shelter_roof": "Cobertizo para carpa",
+		"shelter_price": "El Cobertizo para carpa tiene un valor de $50.000 COP .",
+		"hiking_sticks": "Palos de caminata",
+		"waistcoat": "Chaleco multiusos",
+		"waistcoat_price": "El Chaleco multiusos tiene un valor de $400.000 COP .",
+		"sales": "Hablar con el equipo de ventas",
+		"shop": "Comprar este artículo",
+		"go_catalog": "Navegar a sitio web",
+		"title": "Colección verano 2022",
+		"subtitle": "Ropa destacada",
+		"title_hikingsticks": "Indumentaria & ropa, final 2022",
+		"subtitle_hikingsticks": "Palos de caminata, graduables y con terminaciones intercambiables",
+		"show": "Otro artículo",
+		"productLaunchTitle": "curation.productLaunchTitle"
+	},
+	"order": {
+		"prompt": "Estaremos encantados de ayudarte. Selecciona una de las siguientes opciones",
+		"search": "Buscar por número del pedido",
+		"account": "Vincular mi cuenta",
+		"dialog": "Diálogo de vinculación de cuentas",
+		"searching": "Buscando tu último pedido...",
+		"number": "Por supuesto, escribe el número del pedido",
+		"status": "Tu pedido está en camino, espera recibirlo en tres días."
+	},
+	"care": {
+		"prompt": "Para conectarte con el equipo correcto, dime de qué se trata.",
+		"prompt_buy": "¿Cómo o dónde deseas comprar?",
+		"order": "Consultas sobre pedidos",
+		"billing": "Problemas de facturación",
+		"other": "Otro tema",
+		"onsite": "Presencial en Manizales",
+		"online": "En línea",
+		"other_buy": "Otro",
+		"appointment": "Gracias por querer concertar una cita.",
+		"issue": "Hola, {{userFirstName}}. Me llamo {{agentFirstName}} y estoy aquí para ayudarte con cualquier pregunta que tengas sobre {{topic}}.",
+		"default": "Hola, {{userFirstName}}. Me llamo {{agentFirstName}} y estoy aquí para ofrecerte asistencia. ¿Cómo te puedo ayudar?",
+		"style": "Hola, {{userFirstName}}. Me llamo {{agentFirstName}} y estoy aquí para responder cualquier pregunta que puedas tener sobre nuestros estilos de verano.",
+		"style_agent": "Hola, {{userFirstName}}. Próximamente alguien te responderá con más información de éstos, y otros artículos y servicios disponibles.",
+		"end": "Aquí termina la demo. Aprovecha la eficacia de la plataforma de Messenger para tu negocio. Visita https://fb.me/get-sample-oc para aprender a crear una experiencia similar",
+		"end_item": "Próximamente una persona encargada te brindará información adicional de este y otros artículos.",
+		"help": "Ayuda"
+	},
+	"survey": {
+		"prompt": "Hola, quiero conocer tu opinión sobre tu experiencia reciente con {{agentFirstName}}",
+		"prompt_agent": "Por favor bríndanos tu opinión sobre la experiencia reciente con la meta de mejorar el servicio.",
+		"positive": "Gracias por tu opinión",
+		"neutral": "Gracias por tu opinión; si crees que hay algo que deberíamos mejorar, envíanos un comentario con el hashtag #sugerencia",
+		"negative": "Gracias por avisarnos. Lamentamos lo sucedido, dinos si hay algo que podamos hacer para mejorar la situación",
+		"suggestion": "Recibimos tu sugerencia y el equipo la revisará pronto. Si necesitas recibir una respuesta sobre esto ahora, envía un comentario con la palabra \"ayuda\""
+	},
+	"chat_plugin": {
+		"prompt": "Gracias por visitar nuestra tienda, asegúrese de ver todos los excelentes estilos que tenemos en la sección de verano."
+	},
+	"fallback": {
+		"any": "Lo siento, pero no reconozco \"{{message}}\".",
+		"attachment": "Gracias por enviar este archivo adjunto; ahora podemos comunicarte con un agente para que lo revise o puedes volver a empezar"
+	}
 }

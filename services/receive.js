@@ -94,7 +94,7 @@ module.exports = class Receive {
     ) {
       response = Response.genNuxMessage(this.user);
     } else if (message.includes("abrete sesamo")) {
-      response = Response.genText("ESTA ES UNA RESPUESTA AUTOMÁTICA");
+      response = Response.genText("ESTA ES UNA RESPUESTA AUTOMÁTICA JuaJuaJua");
     } else if (Number(message)) {
       response = Order.handlePayload("ORDER_NUMBER");
     } else if (message.includes("#")) {
@@ -112,15 +112,15 @@ module.exports = class Receive {
         Response.genText(i18n.__("get_started.guidance")),
         Response.genQuickReply(i18n.__("get_started.help"), [
           {
-            title: i18n.__("menu.suggestion"),
+            title: i18n.__("menu.watch_item"),
             payload: "CURATION"
           },
           {
-            title: i18n.__("menu.help"),
+            title: i18n.__("menu.buy_item"),
             payload: "CARE_HELP"
           },
           {
-            title: i18n.__("menu.product_launch"),
+            title: i18n.__("menu.go_catalog"),
             payload: "PRODUCT_LAUNCH"
           }
         ])
@@ -290,15 +290,15 @@ module.exports = class Receive {
 
     let response = Response.genQuickReply(welcomeMessage, [
       {
-        title: i18n.__("menu.suggestion"),
+        title: i18n.__("menu.watch_item"),
         payload: "CURATION"
       },
       {
-        title: i18n.__("menu.help"),
+        title: i18n.__("menu.buy_item"),
         payload: "CARE_HELP"
       },
       {
-        title: i18n.__("menu.product_launch"),
+        title: i18n.__("menu.go_catalog"),
         payload: "PRODUCT_LAUNCH"
       }
     ]);

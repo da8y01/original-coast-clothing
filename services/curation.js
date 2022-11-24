@@ -70,13 +70,13 @@ module.exports = class Curation {
         break;
 
       case "CURATION":
-        response = Response.genQuickReply(i18n.__("curation.prompt"), [
+        response = Response.genQuickReply(i18n.__("curation.prompt_items"), [
           {
-            title: i18n.__("curation.me"),
+            title: i18n.__("curation.outdoor_wear"),
             payload: "CURATION_FOR_ME"
           },
           {
-            title: i18n.__("curation.someone"),
+            title: i18n.__("curation.electronics"),
             payload: "CURATION_SOMEONE_ELSE"
           }
         ]);
@@ -84,17 +84,17 @@ module.exports = class Curation {
 
       case "CURATION_FOR_ME":
       case "CURATION_SOMEONE_ELSE":
-        response = Response.genQuickReply(i18n.__("curation.occasion"), [
+        response = Response.genQuickReply(i18n.__("curation.occasion_outdoor"), [
           {
-            title: i18n.__("curation.work"),
+            title: i18n.__("curation.shelter_roof"),
             payload: "CURATION_OCASION_WORK"
           },
           {
-            title: i18n.__("curation.dinner"),
+            title: i18n.__("curation.hiking_sticks"),
             payload: "CURATION_OCASION_DINNER"
           },
           {
-            title: i18n.__("curation.party"),
+            title: i18n.__("curation.waistcoat"),
             payload: "CURATION_OCASION_PARTY"
           },
           {
@@ -106,56 +106,85 @@ module.exports = class Curation {
 
       case "CURATION_OCASION_WORK":
         // Store the user budget preference here
-        response = Response.genQuickReply(i18n.__("curation.price"), [
-          {
-            title: "~ $20",
-            payload: "CURATION_BUDGET_20_WORK"
-          },
-          {
-            title: "~ $30",
-            payload: "CURATION_BUDGET_30_WORK"
-          },
-          {
-            title: "+ $50",
-            payload: "CURATION_BUDGET_50_WORK"
-          }
-        ]);
+        // response = Response.genQuickReply(i18n.__("curation.price"), [
+        //   {
+        //     title: "~ $20",
+        //     payload: "CURATION_BUDGET_20_WORK"
+        //   },
+        //   {
+        //     title: "~ $30",
+        //     payload: "CURATION_BUDGET_30_WORK"
+        //   },
+        //   {
+        //     title: "+ $50",
+        //     payload: "CURATION_BUDGET_50_WORK"
+        //   }
+        // ]);
+        response = [
+          Response.genTextWithPersona(
+            i18n.__("curation.shelter_price", {
+              userFirstName: this.user.firstName,
+              agentFirstName: config.personaSales.name
+            }),
+            config.personaSales.id
+          ),
+          Response.genTextWithPersona(
+            i18n.__("care.end_item"),
+            config.personaSales.id
+          ),
+          // Survey.genAgentRating(config.personaSales.name)
+        ];
         break;
 
       case "CURATION_OCASION_DINNER":
         // Store the user budget preference here
-        response = Response.genQuickReply(i18n.__("curation.price"), [
-          {
-            title: "~ $20",
-            payload: "CURATION_BUDGET_20_DINNER"
-          },
-          {
-            title: "~ $30",
-            payload: "CURATION_BUDGET_30_DINNER"
-          },
-          {
-            title: "+ $50",
-            payload: "CURATION_BUDGET_50_DINNER"
-          }
-        ]);
+        // response = Response.genQuickReply(i18n.__("curation.price"), [
+        //   {
+        //     title: "~ $20",
+        //     payload: "CURATION_BUDGET_20_DINNER"
+        //   },
+        //   {
+        //     title: "~ $30",
+        //     payload: "CURATION_BUDGET_30_DINNER"
+        //   },
+        //   {
+        //     title: "+ $50",
+        //     payload: "CURATION_BUDGET_50_DINNER"
+        //   }
+        // ]);
+        response = this.genCurationResponse(payload);
         break;
 
       case "CURATION_OCASION_PARTY":
         // Store the user budget preference here
-        response = Response.genQuickReply(i18n.__("curation.price"), [
-          {
-            title: "~ $20",
-            payload: "CURATION_BUDGET_20_PARTY"
-          },
-          {
-            title: "~ $30",
-            payload: "CURATION_BUDGET_30_PARTY"
-          },
-          {
-            title: "+ $50",
-            payload: "CURATION_BUDGET_50_PARTY"
-          }
-        ]);
+        // response = Response.genQuickReply(i18n.__("curation.price"), [
+        //   {
+        //     title: "~ $20",
+        //     payload: "CURATION_BUDGET_20_PARTY"
+        //   },
+        //   {
+        //     title: "~ $30",
+        //     payload: "CURATION_BUDGET_30_PARTY"
+        //   },
+        //   {
+        //     title: "+ $50",
+        //     payload: "CURATION_BUDGET_50_PARTY"
+        //   }
+        // ]);
+        response = [
+          Response.genTextWithPersona(
+            i18n.__("curation.waistcoat_price", {
+              userFirstName: this.user.firstName,
+              agentFirstName: config.personaSales.name
+            }),
+            config.personaSales.id
+          ),
+          Response.genTextWithPersona(
+            i18n.__("care.end_item"),
+            config.personaSales.id
+          ),
+          // Survey.genAgentRating(config.personaSales.name)
+        ];
         break;
 
       case "CURATION_BUDGET_20_WORK":
@@ -199,6 +228,19 @@ module.exports = class Curation {
           "WEEKLY",
           "12345"
         );
+        // let buttons = [
+        //   Response.genWebUrlButton(
+        //     i18n.__("curation.shop"),
+        //     `${config.shopUrl}/products/${outfit}`
+        //   ),
+        // ];
+
+        // let response = Response.genGenericTemplate(
+        //   `${config.appUrl}/looks/${outfit}.png`,
+        //   i18n.__("curation.title"),
+        //   i18n.__("curation.subtitle"),
+        //   buttons
+        // );
         break;
     }
 
@@ -206,6 +248,7 @@ module.exports = class Curation {
   }
 
   genCurationResponse(payload) {
+    payload = `CURATION_BUDGET_30_HIKINGSTICKS`
     let occasion = payload.split("_")[3].toLowerCase();
     let budget = payload.split("_")[2].toLowerCase();
     let outfit = `${this.user.gender}-${occasion}`;
@@ -213,12 +256,13 @@ module.exports = class Curation {
     let buttons = [
       Response.genWebUrlButton(
         i18n.__("curation.shop"),
-        `${config.shopUrl}/products/${outfit}`
+        // `${config.shopUrl}/products/${outfit}`
+        `${config.shopUrl}`
       ),
-      Response.genPostbackButton(
-        i18n.__("curation.show"),
-        "CURATION_OTHER_STYLE"
-      )
+      // Response.genPostbackButton(
+      //   i18n.__("curation.show"),
+      //   "CURATION_OTHER_STYLE"
+      // )
     ];
 
     if (budget === "50") {
@@ -228,9 +272,9 @@ module.exports = class Curation {
     }
 
     let response = Response.genGenericTemplate(
-      `${config.appUrl}/looks/${outfit}.jpg`,
-      i18n.__("curation.title"),
-      i18n.__("curation.subtitle"),
+      `${config.appUrl}/looks/${outfit}.png`,
+      i18n.__("curation.title_hikingsticks"),
+      i18n.__("curation.subtitle_hikingsticks"),
       buttons
     );
 

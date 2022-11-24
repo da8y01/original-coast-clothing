@@ -17,7 +17,7 @@ const Response = require("./response"),
 module.exports = class Survey {
   static genAgentRating(agent) {
     let response = Response.genQuickReply(
-      i18n.__("survey.prompt", {
+      i18n.__("survey.prompt_agent", {
         agentFirstName: agent
       }),
       [
