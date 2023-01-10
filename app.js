@@ -41,12 +41,12 @@ app.use(express.static(path.join(path.resolve(), "public")));
 app.set("view engine", "ejs");
 
 // Respond with index file when a GET request is made to the homepage
-app.get("/metabot1", function(_req, res) {
+app.get("/catalog", function(_req, res) {
   res.render("index");
 });
 
 // Add support for GET requests to our webhook
-app.get("/metabot1/webhook", (req, res) => {
+app.get("/catalog/webhook", (req, res) => {
   // Parse the query params
   let mode = req.query["hub.mode"];
   let token = req.query["hub.verify_token"];
@@ -67,7 +67,7 @@ app.get("/metabot1/webhook", (req, res) => {
 });
 
 // Create the endpoint for your webhook
-app.post("/metabot1/webhook", (req, res) => {
+app.post("/catalog/webhook", (req, res) => {
   let body = req.body;
 
   console.log(`\u{1F7EA} Received webhook:`);
@@ -207,7 +207,7 @@ function receiveAndReturn(user, webhookEvent, isUserRef) {
 }
 
 // Set up your App's Messenger Profile
-app.get("/metabot1/profile", (req, res) => {
+app.get("/catalog/profile", (req, res) => {
   let token = req.query["verify_token"];
   let mode = req.query["mode"];
 
