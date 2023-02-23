@@ -45,6 +45,10 @@ app.get("/catalog", function(_req, res) {
   res.render("index");
 });
 
+app.get("/status", function(_req, res) {
+  res.status(200).send({status: "running"});
+});
+
 // Add support for GET requests to our webhook
 app.get("/catalog/webhook", (req, res) => {
   // Parse the query params
